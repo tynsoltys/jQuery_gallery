@@ -1,0 +1,277 @@
+article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary{display:block;}audio,canvas,video{display:inline-block;}audio:not([controls]){display:none;height:0;}[hidden]{display:none;}html{font-family:sans-serif;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;}a:focus{outline:thin dotted;}a:active,a:hover{outline:0;}h1{font-size:2em;}abbr[title]{border-bottom:1px dotted;}b,strong{font-weight:700;}dfn{font-style:italic;}mark{background:#ff0;color:#000;}code,kbd,pre,samp{font-family:monospace, serif;font-size:1em;}pre{white-space:pre-wrap;word-wrap:break-word;}q{quotes:\201C \201D \2018 \2019;}small{font-size:80%;}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline;}sup{top:-.5em;}sub{bottom:-.25em;}img{border:0;}svg:not(:root){overflow:hidden;}fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em;}button,input,select,textarea{font-family:inherit;font-size:100%;margin:0;}button,input{line-height:normal;}button,html input[type=button],/* 1 */
+input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer;}button[disabled],input[disabled]{cursor:default;}input[type=checkbox],input[type=radio]{box-sizing:border-box;padding:0;}input[type=search]{-webkit-appearance:textfield;-moz-box-sizing:content-box;-webkit-box-sizing:content-box;box-sizing:content-box;}input[type=search]::-webkit-search-cancel-button,input[type=search]::-webkit-search-decoration{-webkit-appearance:none;}textarea{overflow:auto;vertical-align:top;}table{border-collapse:collapse;border-spacing:0;}body,figure{margin:0;}legend,button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0;}
+.clearfix:after {visibility: hidden; display: block; font-size: 0; content: " "; clear: both; height: 0; }
+* { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+
+html { 
+  background: url(../images/bg.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+// Structural Styles
+
+section { 
+	// border:1px solid goldenrod;
+	text-align: center;
+	margin: 0 auto;
+	padding: 0;
+}
+
+a {
+	color:white;
+	text-decoration: none;
+	font-size: 30px;
+}
+
+// Navigation Styles
+
+#nav {	
+	display:none;
+}
+
+// .displayNav {
+// 	display:block;
+
+// }
+
+.navBar {
+	width:100%;
+	// background:rgba(255,255,255,0.1);
+	a {
+		width:100%;
+		color:rgba(255,255,255,0.8);
+		text-decoration: none;
+		h1{
+			width:100%;
+			font-family: 'Oswald', sans-serif;
+			font-size: 30px;
+			font-weight: lighter;
+			letter-spacing: 10px;
+			text-transform: uppercase;
+			text-shadow: 0px 0px 20px black;
+		}
+	}
+}
+
+// Splash styles
+
+#splash{
+	height:100vh;
+	.splashContainer{
+		height: 100%;
+		// border:1px solid blue;
+		display: -webkit-flex;
+		display: -moz-flex;
+		display: -ms-flex;
+		display: -o-flex;
+		display: flex;
+		flex-flow: row wrap;
+		.splashLogo{
+			// background-color: rgba(255,255,255,0.3);
+			// border-radius: 20px;
+			letter-spacing: 3px;
+			margin:auto;
+			font-family: 'Berkshire Swash', cursive;
+			font-size: 60px;
+			padding: 20px;
+			color: rgba(255, 255, 255, 0.8);
+			text-shadow: 0px 0px 20px black;
+			h2 {
+				margin-bottom: 0;
+			}
+		}
+		h4{
+			margin-top: 0;
+			padding-top: 0;
+			font-family: 'Oswald', sans-serif;
+			font-size: 30px;
+			font-weight: lighter;
+			letter-spacing: 10px;
+			text-transform: uppercase;
+			text-shadow: 0px 0px 20px black;
+		}
+	}
+}
+
+// Gallery Stylistics
+
+.selected img{
+	border:4px solid hotpink;
+	//I think should change this, though it will be sad.
+}
+
+#gallery{
+	position:relative;
+	height: 65vh;
+	.galleryFull{
+		height: 100%;
+		// border:1px solid blue;
+		display: -webkit-flex;
+		display: -moz-flex;
+		display: -ms-flex;
+		display: -o-flex;
+		display: flex;
+		flex-flow: row wrap;
+		align-items: center;
+		img{
+			max-width: 100%;
+			max-height: 400px;
+			box-shadow: 0px 0px 20px black;
+			&:hover{
+				cursor: alias;
+		}
+		}
+	}
+	.leftArrowContainer, .rightArrowContainer {
+		flex: 1 0 auto;
+		@media (max-width:830px) {
+				order:1;
+				flex: 1 0 50%;
+		}
+		i {
+			font-size: 75px;
+			text-shadow: 0px 0px 20px black;
+		}
+	}
+	.galleryImageContainer {
+		flex: 1 0 80%;
+		// border:1px solid hotpink;
+		@media (max-width:830px) {
+				order:-1;
+				flex: 1 0 100%;
+		}
+	}
+}
+
+//Fancybox Stylezzz
+
+.fancybox {
+	display: none;
+}
+
+.fancyAppear {
+	position: absolute;
+	top:0;
+	left:0;
+	z-index:100;	
+	height: 100vh;
+	width: 100%;
+	background-color: rgba(0,0,0,0.9);
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	flex-flow: row wrap;
+	a {
+		flex:1 0 90%;
+		margin:auto;
+		cursor: crosshair;
+		img{
+			max-width:100%;
+			margin:auto;
+		}
+	}
+}
+
+// Carousel Stylistics
+
+#carousel {
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	@media (max-width:830px) {
+			flex-wrap: wrap;
+			margin-top:20px;
+	}
+	.carouselContainer {
+		overflow:hidden;
+		flex:1 0 80%;
+		position: relative;
+		padding: 0;
+		margin: 0;
+		display: -webkit-flex;
+		display: -moz-flex;
+		display: -ms-flex;
+		display: -o-flex;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		box-shadow: 0px 0px 20px black;
+		@media (max-width:830px) {
+				flex-wrap: wrap;
+				margin-top:20px;
+		}
+
+	//note that more styles for the ul are below
+
+	}
+	.leftCarouselArrow, .rightCarouselArrow {
+		flex:1 0 auto;
+		font-size: 30px;
+		padding:0px;
+		color:white;
+		@media (max-width:830px) {
+			display:none;
+		}
+		a{
+			// margin:20px;
+		}
+	}
+}
+
+ul.carousel{
+	position:relative;
+	left:0;
+	flex:1 0 100%;
+	list-style: none;
+	// padding: 10px;
+	margin: 0;
+	padding: 0;
+	height:15vh;
+	min-height:100px;
+	// border:1px solid blue;
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	flex-direction: row;
+	align-items: flex-start;
+
+	@media (max-width:830px) {
+			flex-wrap: wrap;
+			width:100%;
+			height:auto;
+			// background:rgba(0,0,0,0.5);
+	}
+	li.thumbnail{
+		max-width: 100%;
+		height:15vh;
+		min-height:100px;
+		flex:1 0 auto;
+		@media (max-width:830px) {
+				height:100px;
+				margin:10px;
+		}
+		a{
+			height:100%;
+			width:100%;
+			img{
+				// max-width: 15vh;
+				height:100%;
+				box-shadow: 0px 0px 20px black;
+				
+
+			}
+		}
+	}
+}
+
